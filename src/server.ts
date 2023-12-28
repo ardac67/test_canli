@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(3002, () => {
+server.listen(process.env.PORT2, () => {
   console.log('Welcome to Tata-MESSAGE')
 })
 
