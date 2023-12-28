@@ -1,0 +1,35 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var contact_1 = require("./handlers/contact");
+var mediaLinks_1 = require("./handlers/mediaLinks");
+var user_1 = require("./handlers/user");
+var campaing_1 = require("./handlers/campaing");
+var proposal_1 = require("./handlers/proposal");
+var collaboration_1 = require("./handlers/collaboration");
+var campaign_tags_1 = __importDefault(require("./handlers/campaign_tags"));
+var CollaborationsAdv_1 = __importDefault(require("./handlers/CollaborationsAdv"));
+var router = (0, express_1.Router)();
+router.get('/getUser/:id', user_1.getUser);
+router.get('/getContact/:id', contact_1.getContact);
+router.put('/updateUser/:id', user_1.updateUser);
+router.put('/updateContact/:id', contact_1.editContact);
+router.get('/getMediaLinks/:id', mediaLinks_1.getMediaLinks);
+router.put('/updateMediaLinks/:id', mediaLinks_1.updateMedia);
+router.post('/createCampaign', campaing_1.createCampagin);
+router.get('/allCampaigns/:id', campaing_1.getAllCampaign);
+router.get('/allCampaigns', campaing_1.getAllCampaignInfluencer);
+router.post('/postProposal', proposal_1.postProposal);
+router.get('/getProposal/:id', proposal_1.getProposal);
+router.get('/getIndividualProposal/:id', proposal_1.getIndividualProposal);
+router.put('/acceptOrRejectProposal/:id', proposal_1.changeStatusOfProposal);
+router.get('/getCollaborationInfluencer/:id', collaboration_1.getCollaborationInfluencer);
+router.get('/getCollaborationAdvertiser/:id', CollaborationsAdv_1.default);
+router.get('/getTags', campaign_tags_1.default);
+router.get('/getInfluencer', user_1.getInfluencer);
+router.get('/getAllCampaign_byCampaign_id/:id', campaing_1.getAllCampaign_byCampaign_id);
+exports.default = router;
+//# sourceMappingURL=router.js.map
