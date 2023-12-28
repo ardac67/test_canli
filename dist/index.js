@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var dotenv = __importStar(require("dotenv"));
 dotenv.config();
 var server_1 = __importDefault(require("./server"));
-server_1.default.listen(3001, function () {
+server_1.default.listen(process.env.PORT, function () {
     console.log('Welcome to Tata-API');
 });
 //# sourceMappingURL=index.js.map
